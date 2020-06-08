@@ -13,7 +13,11 @@
                     <p> <%= course.description %> </p>
                 </div>
                 <div class="card-action">
-                    <a href="#">Enroll</a>
+                    <% if logged_in? %>
+                        <% if !current_user.courses.include?(course) %>
+                            <%= link_to 'Enroll', enroll_path(course_id: course.id), method: :POST %>
+                        <% end %>
+                    <% end %>
                     <a href="#">Info</a>
                 </div>
             </div>

@@ -10,4 +10,16 @@
             <i class="material-icons left">create</i><%= link_to 'Edit Profile', edit_student_path(@student) %>
         <% end %>
     </div>
+
 </div>
+<% if @student.courses.empty? %>
+    No courses enrolled
+<% else %>
+<ul>
+    <% @student.courses.each do |course| %>
+    <li>
+        <%= course.name %>
+    </li>
+    <% end %>
+</ul>
+<% end %>
