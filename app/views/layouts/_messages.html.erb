@@ -1,0 +1,13 @@
+<% flash.each do |type, message| %>
+    <div class="container">
+        <div class="pad-form">
+            <div class="col s12 m12 l12">
+                <div class="card-panel green lighten-2" id="fade-out-target">
+                    <span class="white-text">
+                        <%= message %>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>    
+<% end %>

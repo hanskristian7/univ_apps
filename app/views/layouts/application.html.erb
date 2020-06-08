@@ -9,16 +9,13 @@
   </head>
 
   <body>
-    <!-- <%= link_to 'Home', root_path %>
-    <%= link_to 'Courses', courses_new_path %>
-    <%= link_to 'About', about_path %> -->
-
     <header>
       <%= render 'layouts/navbar' %>
     </header>
 
     <main>
       <div class="container">
+        <%= render 'layouts/messages' %>
         <%= yield %>
       </div>
     </main>

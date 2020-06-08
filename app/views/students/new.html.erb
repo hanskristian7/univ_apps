@@ -1,0 +1,56 @@
+<% if @student.errors.any? %>
+    <div class="container">
+        <div class="pad-form">
+            <div class="col s12 m12 l12">
+                <div class="card-panel red lighten-2">
+                    <span class="white-text">
+                        <%= pluralize(@student.errors.count, "error") %>!
+                        Failed to sign up!
+                        <ul>
+                            <% @student.errors.full_messages.each do |message| %>
+                                <li><%= message %></li>
+                            <% end %>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>
+
+<div class="container">
+    <div class="row center">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <h2 class="header">Sign up!</h2>
+                <div class="row">
+                    <%= form_for(@student, html: {class:"col s12 pad-form"}) do |f| %>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <%= f.text_field :name, autofocus: true %>
+                                <%= f.label :Name %>
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <%= f.text_field :email %>
+                                <%= f.label :Email %>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <%= f.password_field :password %>
+                                <%= f.label :Password %>
+                            </div>
+                        </div>
+                
+                        <%= f.submit "Sign up", class: "btn orange waves-effect waves-light"%>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
