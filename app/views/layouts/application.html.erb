@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>UnivApp</title>
+    <title>Tech University</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,21 @@
   </head>
 
   <body>
-    <%= yield %>
+    <!-- <%= link_to 'Home', root_path %>
+    <%= link_to 'Courses', courses_new_path %>
+    <%= link_to 'About', about_path %> -->
+
+    <header>
+      <%= render 'layouts/navbar' %>
+    </header>
+
+    <main>
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
+    <footer class="page-footer">
+      <%= render 'layouts/footer' %>
+    </footer>
   </body>
 </html>
