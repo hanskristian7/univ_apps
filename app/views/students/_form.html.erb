@@ -1,0 +1,36 @@
+<%= render 'shared/error', obj: @student %>
+<div class="container">
+    <div class="row center">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <h2 class="header"> <%= @student.new_record? ? "Sign up" : "Edit Profile" %></h2>
+                <div class="row">
+                    <%= form_for(@student, html: {class:"col s12 pad-form"}) do |f| %>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <%= f.text_field :name, autofocus: true %>
+                                <%= f.label :Name %>
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <%= f.text_field :email %>
+                                <%= f.label :Email %>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <%= f.password_field :password %>
+                                <%= f.label :Password %>
+                            </div>
+                        </div>
+                
+                        <%= f.button(@student.new_record? ? "Sign up".html_safe : "Update your profile".html_safe, class: "btn orange waves-effect waves-light") %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
