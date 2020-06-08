@@ -6,6 +6,8 @@
     </div>
     <div class="card-action">
         <!-- <a href="#">View Profile</a> -->
-        <i class="material-icons left">create</i><%= link_to 'Edit Profile', edit_student_path(@student) %>
+        <% if current_user == @student %>
+            <i class="material-icons left">create</i><%= link_to 'Edit Profile', edit_student_path(@student) %>
+        <% end %>
     </div>
 </div>
